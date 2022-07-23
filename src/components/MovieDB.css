@@ -1,0 +1,184 @@
+.movie_db_container {
+    width: 97%;
+    height: 500px;
+    margin: 20px;
+}
+
+.search_bar {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    display: flex;
+}
+
+.search_bar input {
+    width: 92%;
+    height: inherit;
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.26);
+    outline: none;
+    font: normal normal 600px 16px/20px Open Sans;
+}
+
+.search_bar input[type="text"] {
+    font-size: 16px;
+}
+
+.search_bar input::placeholder {
+    font: normal normal 600px 16px/20px Open Sans;
+}
+
+
+.search_bar button {
+    height: 44px;
+    width: 8%;
+    background-color: #7089E0;
+    color: azure;
+    font: normal normal bold 16px/22px Open Sans;
+    border: none;
+    border-radius: 0px 5px 5px 0;
+}
+
+.card_container {
+    width: 250px;
+    min-height: 230px;
+    background-color: #D9D9D9;
+    border-radius: 3%;
+}
+
+.card_container img {
+    width: inherit;
+    height: 160px;
+}
+
+.card_info {
+    padding-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 10px;
+}
+
+.card_info #title {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    color: #000000;
+
+}
+
+
+
+.card_info #rating {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #1D1D1D;
+}
+
+.movies_container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    column-gap: 2em;
+    row-gap: 2em;
+    margin-top: 40px;
+}
+
+
+.movieDetails_container {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.img_container img {
+    height: 350px;
+}
+
+
+.backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 10;
+    background: #00000099;
+}
+
+
+.details_container {
+    width: 60%;
+    padding-left: 20px;
+    /* border: 2px solid black; */
+}
+
+
+.details_container #title {
+    text-align: left;
+    font: normal normal bold 25px/28px Open Sans;
+    letter-spacing: 0px;
+    color: #1D2833;
+}
+
+.details_container #rating {
+    font: normal normal 600 18px/24px Open Sans;
+    letter-spacing: 0px;
+    color: #1D2833;
+    margin-top: 10px;
+
+}
+
+.details_container #rating span {
+    font: normal normal 600 14px/19px Open Sans;
+    letter-spacing: 0px;
+    color: #1D2833;
+}
+
+.details_container #desc {
+    margin-top: 10px;
+    font: normal normal 600 14px/19px Open Sans;
+    letter-spacing: 0px;
+    color: #1D2833;
+}
+
+.pagination_container {
+    text-align: center;
+    margin-top: 40px;
+    text-align: center; 
+    margin-bottom: 50px;
+
+}
+
+.pagination_container span {
+    margin-left: 10px;
+}
+
+
+
+
+.pagination_container .active {
+    text-decoration-line: underline;
+    color: #FF6A63;
+}
+
+
+.pagination_container #prev {
+    font: normal normal 650 14px/19px Open Sans;
+    margin: 0 10px 0px 10px
+}
+
+
+.pagination_container #prev :active {
+    text-decoration-line: underline;
+
+}
