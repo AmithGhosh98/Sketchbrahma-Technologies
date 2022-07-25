@@ -13,14 +13,23 @@ function MovieDBManager() {
     const [MovieDetailsModal, setMovieDetailsModal] = useState(false)
     const [selectedMovieDetails, setSelectedMovieDetails] = useState([]);
     const [PageOffset, setPageOffset] = useState(null);
-    let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    const [pageNoDisplay, setPageNoDisplay] = useState(arr);
+    const [pageNoDisplay, setPageNoDisplay] = useState([]);
     const [pageClick, setPageClick] = useState(1);
 
     useEffect(() => {
+        let len = MoviesList?.total_pages
         setMoviesData(MoviesList?.results)
-        // setPageOffset(MoviesList?.total_pages)
-        setPageOffset(35);
+        let arr = [];
+        if (len < 10) {
+            for (let i = 1; i <= len; i++) {
+                arr.push(i)
+            }
+        }
+        else {
+            arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        }
+        setPageOffset(len);
+        setPageNoDisplay(arr);
     }, [MoviesList])
     useEffect(() => {
         dispatch(getMoviesListData(1))
@@ -53,8 +62,6 @@ function MovieDBManager() {
         }
     }
     const onClickPageNo = (dt) => {
-        console.log(query)
-        console.log(dt)
         setPageClick(dt);
         if (query !== '') {
             dispatch(getSearchMoviesList(dt, query))
@@ -101,7 +108,7 @@ function MovieDBManager() {
                     <input type='text' placeholder='Search Movies .......' onChange={onSearchMovieDB} onKeyDown={onKeyDown} />
                     <button onClick={onClickSearchButton}>Search</button>
                 </header>
-           
+
                 <section className='movies_container'>
                     {
                         MoviesData?.map(data => (
@@ -117,10 +124,10 @@ function MovieDBManager() {
                 </section>
                 <section className='pagination_container'>
                     <span onClick={onClickPrevPage} id='prev'> {pageNoDisplay[0] !== 1 && 'PREV'}</span>
-                    {pageNoDisplay.map(dt => <span className={(pageClick === dt) && 'active'} onClick={() => onClickPageNo(dt)} >{dt}</span>)}
+                    {pageNoDisplay.map(dt => <span key={dt} className={(pageClick === dt).toString()==='true' && 'active'} onClick={() => onClickPageNo(dt)} >{dt}</span>)}
                     <span onClick={onClickNextPage} id='prev'>{(PageOffset - pageNoDisplay[1]) > 10 && 'NEXT'}</span>
                 </section>
-                <br/>
+                <br />
             </section>
 
             {MovieDetailsModal && <MovieModalPopup isOpen={MovieDetailsModal} setShowModal={setMovieDetailsModal}>
