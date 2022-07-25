@@ -55,9 +55,7 @@ export function MovieDetailsFragment({ data, onClickClose }) {
                     <div id='rating'>Rating : <span>{data?.vote_average} / 10</span></div>
                     <div id='desc'>{data?.overview}</div>
                     <div id='rating'>Release Date : <span>{data?.release_date}</span></div>
-                    <div id='rating'>Revenue : <span>532000000</span></div>
-                    <div id='rating'>Runtime : <span>90 mins</span></div>
-                    <div id='rating'>Original Language : <span>90 mins</span></div>
+                    <div id='rating'>Original Language : <span>Englishj</span></div>
                 </div>
                 <img src={closeIcon} alt='' width='15px' height='15px' onClick={onClickClose} />
             </section>
